@@ -1,70 +1,99 @@
-# Getting Started with Create React App
+# Rise-11-Assignment
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Dashboard for Filing a Claim
+This project involves building a React-based dashboard for a user-friendly claim filing interface. The dashboard allows users to provide details about their claims, upload required documents, and track the progress through a multi-step process.
 
-## Available Scripts
+Approach to Building the Dashboard
+Component-Based Architecture:
+The dashboard was divided into reusable components:
 
-In the project directory, you can run:
+Sidebar: For navigation and branding.
+Main Content Area: For displaying the form fields, progress bar, and file upload sections.
+Dynamic Elements: Like the calculation of claim value percentage.
+Responsive Design:
+CSS was structured to ensure that the layout adapts to different screen sizes while maintaining alignment, spacing, and readability.
 
-### `npm start`
+State Management:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Used React's useState hook for managing input data, toggles, and dynamic updates like the percentage calculation.
+Form data was structured into an object for easy management and extensibility.
+Dynamic Validation and Calculation:
+The percentage of the claim value relative to the contract value was calculated in real-time and displayed, providing users immediate feedback.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+CSS Styling:
 
-### `npm test`
+Leveraged custom styles for components like the progress bar, form fields, toggle buttons, and file upload areas.
+Ensured alignment of widgets to match the provided design.
+Challenges Faced and How They Were Resolved
+Progress Bar Styling:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Challenge: The provided progress bar required custom styling for active and completed states.
+Solution: Used completed and active classes with distinct colors to indicate progress visually.
+Aligning Widgets:
 
-### `npm run build`
+Challenge: Aligning widgets (form inputs and file upload boxes) as shown in the image while maintaining responsiveness.
+Solution: Used a CSS grid system with appropriate gap and alignment styles.
+Percentage Calculation:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Challenge: Dynamically calculating and updating the percentage while ensuring valid inputs (non-zero values).
+Solution: Added validation to ensure inputs were greater than zero and recalculated the percentage on every relevant input change.
+Dynamic Toggle Buttons:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Challenge: Styling toggle buttons to indicate active and inactive states.
+Solution: Added conditional classes based on the state, making it intuitive for users.
+File Upload Styling:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Challenge: Customizing file upload inputs to match the design.
+Solution: Wrapped file inputs in styled containers and used modern input selectors.
+Assumptions Made
+Design Requirements:
 
-### `npm run eject`
+Assumed the layout provided in the image was the desired final design. Adjustments were made to closely replicate it while maintaining responsiveness.
+Form Validation:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Only basic validation (non-empty, numeric values for contract and claim) was included for this implementation. Advanced validations (like file type restrictions) were assumed to be out of scope.
+Percentage Display:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Assumed that the percentage should be dynamically calculated as users input data, rounded to two decimal places, and displayed in a simple format.
+Multi-Step Process:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+The progress bar assumed a static representation for now, with dynamic functionality to reflect actual step completion being considered as part of future improvements.
+Placeholder Sidebar Items:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Assumed the sidebar items ("Dashboard," "My Cases," etc.) were placeholders and could be replaced with actual links as the project develops.
+Future Enhancements
+Form Validation:
 
-## Learn More
+Implement advanced validations, such as ensuring uploaded files are of specific formats and required fields are completed.
+Dynamic Progress Bar:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Make the progress bar fully functional, updating dynamically as the user completes each step.
+Backend Integration:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Add API calls for submitting form data and uploading files, with error handling and success notifications.
+Accessibility:
 
-### Code Splitting
+Ensure the application is fully accessible (ARIA roles, keyboard navigation, etc.).
+Getting Started
+Clone the repository:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+bash
+Copy code
+git clone <repository-url>
+cd claim-dashboard
+Install dependencies:
 
-### Analyzing the Bundle Size
+bash
+Copy code
+npm install
+Start the development server:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+bash
+Copy code
+npm start
+Access the app at http://localhost:3000 in your browser.
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Technologies Used
+React: For building the UI components.
+CSS: For styling and layout.
+JavaScript: For dynamic interactions.
